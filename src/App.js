@@ -8,6 +8,10 @@ class App extends Component {
 
         this.state = {};
         this.state.modal = false;
+        this.state.buttons = [
+                {type: 'primary', label: 'Continue', clicked: this.continue},
+                {type: 'danger', label: 'Close', clicked: this.closeModal}
+        ];
     }
 
     showModal = () => {
@@ -18,10 +22,15 @@ class App extends Component {
         this.setState({modal: false})
     }
 
+    continue = () => {
+        alert("You decided to continue.");
+    }
+
     render() {
         return (
             <div className="App">
                 <Modal title="Заголовок модального окна"
+                       buttons = {this.state.buttons}
                        show={this.state.modal}
                        close={this.closeModal}>Text</Modal>
                 <button onClick={this.showModal}>Modal</button>

@@ -7,9 +7,6 @@ const Modal = props => (
 
     <div>
         <Backdrop show={props.show} cancel={props.close}/>
-        {/*<div className={"Modal" + (props.show ? ' Modal-show' : '')}>*/}
-            {/*{props.children}*/}
-        {/*</div>*/}
         <div className={props.show ? "modal fade show" : "modal fade"}
              style={{ display: props.show ? "block" : "none"}}
              tabIndex="-1" role="dialog">
@@ -25,8 +22,7 @@ const Modal = props => (
                         <p>Modal body text goes here.</p>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={props.close}>Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button>
+                        {props.buttons.map(button => <button type="button" className={"btn btn-" + button.type} onClick={button.clicked}>{button.label}</button>)}
                     </div>
                 </div>
             </div>
