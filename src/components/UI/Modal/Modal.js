@@ -5,12 +5,12 @@ import Backdrop from "../Backdrop/Backdrop";
 const Modal = props => (
 
     <div>
-        <Backdrop show={props.show} cancel={props.close}/>
+        <Backdrop show={props.show}/>
         <div className={props.show ? "modal fade show" : "modal fade"}
              style={{ display: props.show ? "block" : "none"}}
              tabIndex="-1"
              role="dialog"
-             data-backdrop={props.show}>
+             onClick={props.close}>
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -35,4 +35,3 @@ const Modal = props => (
 
 
 export default Modal;
-{}
