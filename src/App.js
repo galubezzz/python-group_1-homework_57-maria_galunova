@@ -30,10 +30,11 @@ class App extends Component {
         return (
             <div className="App">
                 <Modal title="Beautiful title"
+                       text="Not so beautiful text"
                        buttons = {this.state.buttons}
                        show={this.state.modal}
                        close={this.closeModal}>Text</Modal>
-                <button onClick={this.showModal}>Modal</button>
+                <button type="button" className='btn btn-primary m-2' onClick={this.showModal}>Modal</button>
             </div>
         );
     }
