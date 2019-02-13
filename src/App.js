@@ -29,7 +29,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Modal title="Заголовок модального окна"
+                <Modal title="Beautiful title"
                        buttons = {this.state.buttons}
                        show={this.state.modal}
                        close={this.closeModal}>Text</Modal>

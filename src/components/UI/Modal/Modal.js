@@ -1,5 +1,4 @@
 import React from 'react';
-import './Modal.css';
 import Backdrop from "../Backdrop/Backdrop";
 
 
@@ -9,12 +8,14 @@ const Modal = props => (
         <Backdrop show={props.show} cancel={props.close}/>
         <div className={props.show ? "modal fade show" : "modal fade"}
              style={{ display: props.show ? "block" : "none"}}
-             tabIndex="-1" role="dialog">
+             tabIndex="-1"
+             role="dialog"
+             data-backdrop={props.show}>
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">{props.title}</h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={props.close}>
+                        <button type="button" className="close"  aria-label="Close" onClick={props.close}>
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
