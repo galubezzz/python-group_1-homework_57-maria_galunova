@@ -45,8 +45,8 @@ class App extends Component {
                        show={this.state.modal}
                        close={this.closeModal}>Text</Modal>
                 <Alert show={this.state.showAlert}
-                       close={this.closeAlert}
-                       closeType={true}
+                       dismiss={this.closeAlert}
+                       closeType={false}
                        timer={0}
                        type="warning">Bla-bla-bla</Alert>
                 <button type="button" className='btn btn-primary m-2' onClick={this.showModal}>Modal</button>
