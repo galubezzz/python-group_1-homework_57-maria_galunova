@@ -15,10 +15,8 @@ const Modal = props => {
             <Backdrop show={props.show} cancel={props.close}/>
             <div className={props.show ? "modal fade show" : "modal fade"}
                  style={{ display: props.show ? "block" : "none", width: "500px", margin: "0 auto", height: "235px",}}
-                 tabIndex="-1"
-                 role="dialog"
-                 >
-                <div className="modal-dialog" role="document">
+                 tabIndex="-1">
+                <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title">{props.title}</h5>

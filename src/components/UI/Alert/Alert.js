@@ -9,10 +9,9 @@ const Alert = (props) => {
         }
     }
 
-
     return(
         <div className={props.show ? ("alert alert-dismissible fade show alert-" + props.type) : ("alert alert-dismissible fade alert-" + props.type)}
-             role="alert" onClick={!props.closeType ? props.dismiss : ""}>
+             onClick={!props.closeType ? props.dismiss : ""}>
             <strong>Holy guacamole!</strong> {props.children}
                 {props.dismiss && props.closeType && <button type="button" className="close" aria-label="Close" onClick={autoClose()}>
                 <span aria-hidden="true">&times;</span>
