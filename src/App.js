@@ -47,7 +47,7 @@ class App extends Component {
                 <Alert show={this.state.showAlert}
                        close={this.closeAlert}
                        closeType={true}
-                       timer={5000}
+                       timer={0}
                        type="warning"/>
                 <button type="button" className='btn btn-primary m-2' onClick={this.showModal}>Modal</button>
                 <button type="button" className='btn btn-warning m-2' onClick={this.showAlert}>Alert</button>
