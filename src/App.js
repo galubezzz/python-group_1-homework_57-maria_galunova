@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import Modal from './components/UI/Modal/Modal'
+import Modal from './components/UI/Modal/Modal';
+import Alert from "./components/UI/Alert/Alert"
 
 class App extends Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class App extends Component {
 
         this.state = {};
         this.state.modal = false;
+        this.state.showAlert = false;
         this.state.buttons = [
                 {type: 'primary', label: 'Continue', clicked: this.continue},
                 {type: 'danger', label: 'Close', clicked: this.closeModal}
@@ -22,6 +24,14 @@ class App extends Component {
         this.setState({modal: false})
     }
 
+    showAlert = () => {
+        this.setState({showAlert: true})
+    }
+
+    closeAlert = () => {
+        this.setState({showAlert: false})
+    }
+
     continue = () => {
         alert("You decided to continue.");
     }
@@ -34,7 +44,13 @@ class App extends Component {
                        buttons = {this.state.buttons}
                        show={this.state.modal}
                        close={this.closeModal}>Text</Modal>
+                <Alert show={this.state.showAlert}
+                       close={this.closeAlert}
+                       closeType={true}
+                       timer={5000}
+                       type="warning"/>
                 <button type="button" className='btn btn-primary m-2' onClick={this.showModal}>Modal</button>
+                <button type="button" className='btn btn-warning m-2' onClick={this.showAlert}>Alert</button>
             </div>
         );
     }
