@@ -48,7 +48,7 @@ class App extends Component {
                        close={this.closeAlert}
                        closeType={true}
                        timer={0}
-                       type="warning"/>
+                       type="warning">Bla-bla-bla</Alert>
                 <button type="button" className='btn btn-primary m-2' onClick={this.showModal}>Modal</button>
                 <button type="button" className='btn btn-warning m-2' onClick={this.showAlert}>Alert</button>
             </div>
